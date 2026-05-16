@@ -3,99 +3,167 @@ import pandas as pd
 from pathlib import Path
 import html
 
-st.set_page_config(layout="wide", page_title="Teacher James · IGCSE Economics")
+st.set_page_config(layout="wide", page_title="SISB Economics · Past Paper Tool")
 
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
-html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
+html, body, [class*="css"] { font-family: 'Lato', sans-serif; }
 #MainMenu, footer, header { visibility: hidden; }
 .block-container { padding-top: 1.5rem !important; padding-bottom: 2rem !important; }
 
+/* ── Header ── */
 .app-header {
-    background: #1a2e44; border-radius: 12px; padding: 1.4rem 2rem;
-    margin-bottom: 1.8rem; display: flex; align-items: center; justify-content: space-between;
+    background: #002F6C;
+    border-radius: 12px;
+    padding: 1.4rem 2rem;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .app-header h1 {
-    font-family: 'DM Serif Display', serif; color: #ffffff;
-    font-size: 1.7rem; margin: 0; letter-spacing: -0.01em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 1.7rem;
+    margin: 0;
+    letter-spacing: -0.01em;
 }
-.app-header .subtitle { color: #7fa8c9; font-size: 0.85rem; margin-top: 3px; }
+.app-header .subtitle { color: #83E3DE; font-size: 0.85rem; margin-top: 3px; font-weight: 400; }
 .header-badge {
-    background: #2e7d52; color: #c6f0d8; font-size: 0.75rem; font-weight: 600;
-    padding: 5px 12px; border-radius: 20px; letter-spacing: 0.04em; text-transform: uppercase;
+    background: #008BCC;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
+/* ── Paper label ── */
 .paper-label {
-    background: #e8f5ee; border-left: 4px solid #2e7d52; color: #1a4d32;
-    padding: 10px 16px; border-radius: 0 8px 8px 0; font-size: 0.9rem;
-    font-weight: 500; margin-bottom: 1rem;
-}
-.topic-label {
-    background: #ede9fe; border-left: 4px solid #7c3aed; color: #3b0764;
-    padding: 10px 16px; border-radius: 0 8px 8px 0; font-size: 0.9rem;
-    font-weight: 500; margin-bottom: 1rem;
+    background: #e8f4fb;
+    border-left: 4px solid #008BCC;
+    color: #002F6C;
+    padding: 10px 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
+/* ── Topic label ── */
+.topic-label {
+    background: #e0f7f6;
+    border-left: 4px solid #83E3DE;
+    color: #002F6C;
+    padding: 10px 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* ── Pills ── */
 .marks-pill {
-    display: inline-flex; align-items: center; gap: 6px; background: #1a2e44;
-    color: #fff; font-size: 0.85rem; font-weight: 600; padding: 6px 16px;
-    border-radius: 20px; margin-bottom: 1.2rem;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #002F6C; color: #fff; font-size: 0.85rem; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 1.2rem;
 }
 .count-pill {
-    display: inline-flex; align-items: center; gap: 6px; background: #7c3aed;
-    color: #fff; font-size: 0.85rem; font-weight: 600; padding: 6px 16px;
-    border-radius: 20px; margin-bottom: 1.2rem;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #008BCC; color: #fff; font-size: 0.85rem; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 1.2rem;
 }
 
+/* ── Frequency badges ── */
+.freq-essential {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #fff3cd; color: #7a4800; border: 1px solid #f0c040;
+    font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
+    border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.freq-important {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #e0f0fb; color: #003f7a; border: 1px solid #008BCC;
+    font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
+    border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.freq-worthknowing {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #e6f9f4; color: #1a5c4a; border: 1px solid #37C563;
+    font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
+    border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+/* ── Frequency info box ── */
+.freq-info {
+    background: #f0f7ff;
+    border: 1px solid #c5dff5;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    color: #002F6C;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+/* ── Stimulus ── */
 .stimulus-card {
-    background: #fffdf5; border: 1px solid #e8d98a; border-left: 5px solid #c9a227;
+    background: #fffdf5; border: 1px solid #e8d98a; border-left: 5px solid #FF801D;
     border-radius: 0 10px 10px 0; padding: 1.2rem 1.5rem; font-size: 0.93rem;
     line-height: 1.7; color: #3d3110; margin-bottom: 1.5rem;
 }
 .stimulus-label {
-    font-size: 0.72rem; font-weight: 600; color: #c9a227;
+    font-size: 0.72rem; font-weight: 700; color: #FF801D;
     text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;
 }
 
+/* ── Year group header ── */
 .year-group-header {
-    font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #1a2e44;
-    border-bottom: 2px solid #1a2e44; padding-bottom: 6px; margin: 1.8rem 0 1rem 0;
+    font-family: 'Lato', sans-serif; font-weight: 900;
+    font-size: 1.1rem; color: #002F6C;
+    border-bottom: 2px solid #008BCC;
+    padding-bottom: 6px; margin: 1.8rem 0 1rem 0;
 }
 .topic-q-context {
-    font-size: 0.78rem; font-weight: 600; color: #7c3aed; text-transform: uppercase;
-    letter-spacing: 0.07em; margin-bottom: 4px;
+    font-size: 0.78rem; font-weight: 700; color: #008BCC;
+    text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 4px;
 }
 .topic-badge {
     display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 4px;
-    font-size: 0.72rem; font-weight: 600; background: #ede9fe; color: #5b21b6;
+    font-size: 0.72rem; font-weight: 700; background: #e0f0fb; color: #002F6C;
     margin-right: 4px; margin-bottom: 6px;
 }
 
+/* ── Table ── */
 .section-rule { border: none; border-top: 1px solid #e2e8f0; margin: 0.6rem 0 1.4rem 0; }
 .col-header {
-    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.08em; color: #94a3b8; padding-bottom: 6px;
-    border-bottom: 2px solid #e2e8f0; margin-bottom: 0.8rem;
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #008BCC; padding-bottom: 6px;
+    border-bottom: 2px solid #008BCC; margin-bottom: 0.8rem;
 }
 .part-badge {
     display: inline-flex; align-items: center; justify-content: center;
-    width: 36px; height: 36px; background: #1a2e44; color: #fff;
-    font-family: 'DM Serif Display', serif; font-size: 1rem; border-radius: 8px;
+    width: 36px; height: 36px; background: #002F6C; color: #fff;
+    font-family: 'Lato', sans-serif; font-weight: 900;
+    font-size: 1rem; border-radius: 8px;
 }
 .q-text { font-size: 0.95rem; line-height: 1.65; color: #1e293b; }
 .marks-badge {
     display: inline-flex; align-items: center; justify-content: center;
     padding: 3px 10px; border-radius: 6px; font-size: 0.8rem;
-    font-weight: 600; min-width: 38px;
+    font-weight: 700; min-width: 38px;
 }
 .marks-1  { background: #dcfce7; color: #166534; }
 .marks-2  { background: #fef9c3; color: #854d0e; }
 .marks-3  { background: #ffedd5; color: #9a3412; }
 .marks-4p { background: #fee2e2; color: #991b1b; }
 .ms-card {
-    background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6;
+    background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #008BCC;
     border-radius: 0 10px 10px 0; padding: 1rem 1.2rem; font-size: 0.88rem;
     line-height: 1.7; color: #1e293b;
 }
@@ -104,15 +172,17 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
     font-size: 0.83rem; color: #475569;
 }
 .tip-label {
-    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.07em; color: #3b82f6; margin-bottom: 4px;
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.07em; color: #008BCC; margin-bottom: 4px;
 }
 .row-divider { border: none; border-top: 1px solid #f1f5f9; margin: 1rem 0; }
-[data-testid="stSidebar"] { background: #f8fafc; border-right: 1px solid #e2e8f0; }
+
+/* ── Sidebar ── */
+[data-testid="stSidebar"] { background: #f0f7ff; border-right: 1px solid #c5dff5; }
 
 @media print {
     section[data-testid='stSidebar'] { display: none !important; }
-    .app-header { background: #1a2e44 !important; -webkit-print-color-adjust: exact; }
+    .app-header { background: #002F6C !important; -webkit-print-color-adjust: exact; }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -140,8 +210,23 @@ def part_sort_key(part):
     roman = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6}
     return (1, base, roman.get(sub.lower(), 0))
 
+def freq_badge(count):
+    if count >= 40:
+        return '<span class="freq-essential">🔥 Essential</span>'
+    elif count >= 15:
+        return '<span class="freq-important">⭐ Important</span>'
+    else:
+        return '<span class="freq-worthknowing">📚 Worth Knowing</span>'
+
+def freq_label(count):
+    if count >= 40:
+        return "🔥 Essential"
+    elif count >= 15:
+        return "⭐ Important"
+    else:
+        return "📚 Worth Knowing"
+
 def render_question_rows(table_data, student_mode):
-    """Render the column headers + question rows."""
     st.markdown('<hr class="section-rule">', unsafe_allow_html=True)
     if student_mode:
         c1, c2, c3 = st.columns([1, 5, 1])
@@ -198,7 +283,6 @@ def load_data():
     if missing:
         st.error(f"Missing columns in CSV: {missing}")
         st.stop()
-    # Fill topic columns if present
     for col in ["Topic 1", "Topic 2"]:
         if col not in df.columns:
             df[col] = ""
@@ -208,10 +292,27 @@ def load_data():
 
 df = load_data()
 
-# Build sorted topic list from data
-all_topics = sorted(set(
-    list(df["Topic 1"].unique()) + list(df["Topic 2"].unique())
-) - {""})
+# ── Build topic frequency map ─────────────────────────────────────────────────
+@st.cache_data
+def build_topic_counts(df):
+    counts = {}
+    q_rows = df[df["Part"].astype(str).str.lower() != "stimulus"]
+    for topic in set(list(df["Topic 1"].unique()) + list(df["Topic 2"].unique())) - {""}:
+        n = ((q_rows["Topic 1"] == topic) | (q_rows["Topic 2"] == topic)).sum()
+        counts[topic] = int(n)
+    return counts
+
+topic_counts = build_topic_counts(df)
+
+# Sort topics: Essential first, then Important, then Worth Knowing, alpha within each tier
+def topic_sort_key(t):
+    c = topic_counts.get(t, 0)
+    if c >= 40: tier = 0
+    elif c >= 15: tier = 1
+    else: tier = 2
+    return (tier, t)
+
+all_topics = sorted(topic_counts.keys(), key=topic_sort_key)
 
 
 # ── Header ────────────────────────────────────────────────────────────────────
@@ -221,7 +322,7 @@ st.markdown("""
         <h1>IGCSE Economics</h1>
         <div class="subtitle">Past Paper Examiner Tool &nbsp;·&nbsp; Paper 2</div>
     </div>
-    <div class="header-badge">Teacher James</div>
+    <div class="header-badge">SISB Nonthaburi</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -234,7 +335,6 @@ with st.sidebar:
         ["📋 Paper", "🏷️ Topic"],
         label_visibility="collapsed"
     )
-
     st.markdown("---")
 
     if browse_mode == "📋 Paper":
@@ -254,7 +354,19 @@ with st.sidebar:
 
     else:
         st.markdown("#### 🏷️ Select Topic")
-        selected_topic = st.selectbox("Topic", all_topics)
+
+        # Format topic options with frequency label
+        topic_display = {t: f"{t}  —  {freq_label(topic_counts.get(t,0))}" for t in all_topics}
+        topic_options = list(topic_display.keys())
+        topic_labels  = list(topic_display.values())
+
+        selected_idx = st.selectbox(
+            "Topic",
+            range(len(topic_options)),
+            format_func=lambda i: topic_labels[i]
+        )
+        selected_topic = topic_options[selected_idx]
+
         st.markdown("#### 📅 Filter by Year (optional)")
         year_options = ["All years"] + [str(y) for y in sorted(df["Year"].dropna().unique(), reverse=True)]
         selected_year_filter = st.selectbox("Year", year_options)
@@ -262,7 +374,6 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("#### ⚙️ Options")
     student_mode = st.toggle("🎓 Student Mode", value=False, help="Hides markschemes for self-testing")
-
     if browse_mode == "📋 Paper":
         keyword = st.text_input("🔍 Search question text", placeholder="e.g. elasticity, GDP…")
 
@@ -300,6 +411,18 @@ if browse_mode == "📋 Paper":
         total_str = str(int(total)) if total == int(total) else str(total)
         st.markdown(f'<div class="marks-pill">📋 Total marks: {total_str}</div>', unsafe_allow_html=True)
 
+        # Show topic badges with frequency for this question
+        topics_in_q = set()
+        for _, r in table_data.iterrows():
+            if r["Topic 1"]: topics_in_q.add(r["Topic 1"])
+            if r["Topic 2"]: topics_in_q.add(r["Topic 2"])
+        if topics_in_q:
+            badges = " ".join([
+                f'<span class="topic-badge">{html.escape(t)}</span> {freq_badge(topic_counts.get(t,0))}'
+                for t in sorted(topics_in_q)
+            ])
+            st.markdown(f'<div style="margin-bottom:1rem">{badges}</div>', unsafe_allow_html=True)
+
         stimulus = result_all_parts[result_all_parts["Part"].str.lower() == "stimulus"]
         if not stimulus.empty:
             stim_text = html.escape(stimulus["Stimulus / Scenario"].fillna("").iloc[0]).replace("\n", "<br>")
@@ -324,39 +447,39 @@ if browse_mode == "📋 Paper":
 # TOPIC MODE
 # ══════════════════════════════════════════════════════════════════════════════
 else:
-    # Match rows where selected_topic appears in Topic 1 OR Topic 2
-    topic_mask = (
-        (df["Topic 1"] == selected_topic) | (df["Topic 2"] == selected_topic)
-    )
+    topic_mask = (df["Topic 1"] == selected_topic) | (df["Topic 2"] == selected_topic)
     topic_rows = df[topic_mask & (df["Part"].astype(str).str.lower() != "stimulus")].copy()
 
-    # Apply year filter
     if selected_year_filter != "All years":
         topic_rows = topic_rows[topic_rows["Year"] == int(selected_year_filter)]
 
+    count = topic_counts.get(selected_topic, 0)
+
     st.markdown(
-        f'<div class="topic-label">🏷️ {selected_topic}</div>',
+        f'<div class="topic-label">🏷️ {selected_topic} &nbsp; {freq_badge(count)}</div>',
         unsafe_allow_html=True
     )
 
-    count = len(topic_rows)
-    st.markdown(f'<div class="count-pill">📊 {count} question{"s" if count != 1 else ""} found across all papers</div>', unsafe_allow_html=True)
+    # Frequency info box
+    if count >= 40:
+        msg = f"This topic has appeared in <strong>{count} questions</strong> across past papers — it comes up constantly and should be at the top of your revision list."
+    elif count >= 15:
+        msg = f"This topic has appeared in <strong>{count} questions</strong> across past papers — it comes up regularly and is well worth revising thoroughly."
+    else:
+        msg = f"This topic has appeared in <strong>{count} questions</strong> across past papers — it is part of the full syllabus and understanding it will strengthen your overall performance."
+
+    st.markdown(f'<div class="freq-info">📊 {msg}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="count-pill">📊 {len(topic_rows)} question{"s" if len(topic_rows) != 1 else ""} shown</div>', unsafe_allow_html=True)
 
     if topic_rows.empty:
         st.info("No questions found for this topic and year combination.")
     else:
-        # Group by Year → Month → Paper → Question
-        topic_rows["_year_sort"] = topic_rows["Year"]
         grouped = topic_rows.sort_values(["Year", "Month", "Paper", "Question"], ascending=[False, True, True, True])
 
-        current_year = None
         for year_val, year_group in grouped.groupby("Year", sort=False):
-            # Year header
             st.markdown(f'<div class="year-group-header">{int(year_val)}</div>', unsafe_allow_html=True)
 
             for (month_val, paper_val, q_val), q_group in year_group.groupby(["Month", "Paper", "Question"], sort=False):
-
-                # Sub-header: context for this question
                 t1 = safe_str(q_group.iloc[0]["Topic 1"])
                 t2 = safe_str(q_group.iloc[0]["Topic 2"])
                 topic_badges = f'<span class="topic-badge">{html.escape(t1)}</span>' if t1 else ""
@@ -368,7 +491,6 @@ else:
                     unsafe_allow_html=True
                 )
 
-                # Show stimulus for this question if it exists
                 stim_row = df[
                     (df["Year"] == year_val) &
                     (df["Month"] == month_val) &
@@ -382,7 +504,6 @@ else:
                         with st.expander("📄 View stimulus for this question"):
                             st.markdown(f'<div class="stimulus-card" style="margin-bottom:0"><div class="stimulus-label">Stimulus / Scenario</div>{stim_text}</div>', unsafe_allow_html=True)
 
-                # Sort parts correctly
                 q_group = q_group.copy()
                 q_group["Part"] = q_group["Part"].astype(str)
                 q_group["_sort_key"] = q_group["Part"].apply(part_sort_key)
