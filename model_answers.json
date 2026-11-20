@@ -1,0 +1,309 @@
+[
+  {
+    "year": 2024, "month": "June", "paper": 22, "question": 3, "part": "c", "type": "analyse6",
+    "model": [
+      {"side": null, "sentences": [
+        ["P", "A minimum wage is a price floor: the lowest wage an employer is allowed to pay a worker."],
+        ["E", "If it is set above the equilibrium wage, more people want to work at that wage, but firms want to employ fewer workers."],
+        ["E", "The supply of labour is then greater than the demand for labour, creating a surplus of labour."],
+        ["E", "This surplus of labour is unemployment, so unemployment may rise."]
+      ]},
+      {"side": null, "sentences": [
+        ["P", "A minimum wage may also raise firms' costs of production."],
+        ["E", "Firms that paid less than the minimum wage now have to pay more, which reduces their profits."],
+        ["E", "To cut costs, some firms may reduce output or replace workers with machines."],
+        ["E", "As a result, they may make some workers redundant, increasing unemployment."]
+      ]},
+      {"side": null, "sentences": [
+        ["P", "A minimum wage could also reduce unemployment."],
+        ["E", "Low-paid workers have higher incomes, so they spend more."],
+        ["E", "Higher spending increases total (aggregate) demand, so firms increase output and take on more workers."],
+        ["E", "This would reduce cyclical unemployment."]
+      ]}
+    ]
+  },
+  {
+    "year": 2024, "month": "March", "paper": 22, "question": 3, "part": "c", "type": "analyse6",
+    "model": [
+      {"side": null, "sentences": [
+        ["P", "Fiscal policy is the use of government spending and taxation to influence the economy."],
+        ["E", "If the government increases its spending or cuts taxes, total (aggregate) demand rises."],
+        ["E", "Firms sell more, so they want to increase output."],
+        ["E", "To produce more, they employ more workers, reducing cyclical unemployment."]
+      ]},
+      {"side": null, "sentences": [
+        ["P", "The government could spend more on education and training."],
+        ["E", "This gives workers new skills and makes them more productive."],
+        ["E", "Workers become more occupationally mobile and more attractive to employers."],
+        ["E", "They find jobs more easily, so employment increases."]
+      ]},
+      {"side": null, "sentences": [
+        ["P", "A cut in income tax can also increase employment."],
+        ["E", "Workers keep more of what they earn, so their disposable income from working rises."],
+        ["E", "This increases the incentive to work, so more people look for and take jobs."]
+      ]}
+    ]
+  },
+  {
+    "year": 2025, "month": "March", "paper": 22, "question": 5, "part": "c", "type": "analyse6",
+    "model": [
+      {"side": null, "sentences": [
+        ["P", "An ageing population may reduce a country's economic growth rate."],
+        ["E", "As more people retire, the labour force gets smaller and the dependency ratio rises."],
+        ["E", "With fewer workers, the country can produce less output."],
+        ["E", "This lowers the growth of real GDP."]
+      ]},
+      {"side": null, "sentences": [
+        ["P", "The government may have to spend more on pensions and healthcare for older people."],
+        ["E", "This has an opportunity cost, because less money is left for education or infrastructure."],
+        ["E", "Less spending on these reduces the country's future productive capacity, so economic growth may slow."]
+      ]},
+      {"side": null, "sentences": [
+        ["P", "An ageing population could also increase economic growth."],
+        ["E", "Older workers have more experience, so they may be more skilled and more productive."],
+        ["E", "Higher productivity raises output, which increases economic growth."]
+      ]}
+    ]
+  },
+  {
+    "year": 2022, "month": "November", "paper": 23, "question": 5, "part": "c", "type": "analyse6",
+    "model": [
+      {"side": null, "sentences": [
+        ["P", "A tariff is a tax on imports, which raises their price."],
+        ["E", "Higher prices reduce the demand for imports, so spending on imports falls."],
+        ["E", "This can improve the current account of the balance of payments."]
+      ]},
+      {"side": null, "sentences": [
+        ["P", "Tariffs may be used to protect infant industries."],
+        ["E", "New domestic firms are small and have higher average costs than large foreign firms."],
+        ["E", "The tariff makes foreign goods more expensive, giving the new firms time to grow."],
+        ["E", "As they grow, they can benefit from economies of scale and compete internationally."]
+      ]},
+      {"side": null, "sentences": [
+        ["P", "A government may also use tariffs to protect jobs."],
+        ["E", "As consumers switch from imports to domestic goods, demand for domestic output rises."],
+        ["E", "Domestic firms produce more and employ more workers, so unemployment may fall."]
+      ]}
+    ]
+  },
+  {
+    "year": 2022, "month": "March", "paper": 22, "question": 1, "part": "h", "type": "discuss6",
+    "model": [
+      {"side": "for", "sentences": [
+        ["P", "Demerit goods, such as tobacco and fast food, are more harmful than consumers realise, so they are overconsumed."],
+        ["E", "A higher indirect tax raises firms' costs of production, so supply falls and the price rises."],
+        ["E", "At the higher price consumers buy less, moving output closer to the level where social cost equals social benefit."]
+      ]},
+      {"side": "for", "sentences": [
+        ["P", "The tax also raises revenue for the government."],
+        ["E", "This could pay for campaigns that warn people about the harm, which reduces demand further."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "However, many demerit goods, such as cigarettes, are addictive, so demand is price inelastic."],
+        ["E", "Consumers keep buying almost the same amount, so the tax does little to reduce consumption."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "Higher taxes may also lead to an illegal market, where the goods are sold without the tax."],
+        ["E", "Consumption would then not fall, and the government would lose tax revenue."]
+      ]},
+      {"side": "conclusion", "sentences": [
+        ["C", "Higher indirect taxes can reduce this market failure, but they work best when demand is price elastic."],
+        ["A", "In Bermuda, a tax could work alongside existing rules such as the ban on foreign fast-food chains."]
+      ]}
+    ]
+  },
+  {
+    "year": 2024, "month": "March", "paper": 22, "question": 1, "part": "h", "type": "discuss6",
+    "model": [
+      {"side": "for", "sentences": [
+        ["P", "Working from home may raise productivity."],
+        ["E", "Workers save time and money because they do not travel to work, so they may be less tired and less stressed."],
+        ["E", "They may produce more output per hour, which increases GDP."]
+      ]},
+      {"side": "for", "sentences": [
+        ["P", "Less commuting also reduces traffic congestion and pollution."],
+        ["E", "This lowers external costs and can improve people's health."],
+        ["A", "In Denmark, this would help to protect the high living standards the country already enjoys."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "However, firms that depend on commuters, such as bus companies and city-centre cafes, will lose customers."],
+        ["E", "Their revenue falls, so they may make workers such as bus drivers and waiters unemployed."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "Productivity could also fall."],
+        ["E", "Some workers at home are distracted, are not supervised, or find it harder to communicate with colleagues."]
+      ]},
+      {"side": "conclusion", "sentences": [
+        ["C", "Overall, working from home is likely to benefit the economy if productivity rises, but workers in transport and city-centre businesses may lose out."]
+      ]}
+    ]
+  },
+  {
+    "year": 2023, "month": "March", "paper": 22, "question": 1, "part": "h", "type": "discuss6",
+    "model": [
+      {"side": "for", "sentences": [
+        ["P", "Economic growth means an increase in real GDP, so income per head rises."],
+        ["E", "People can afford more goods and services, which raises their living standards."]
+      ]},
+      {"side": "for", "sentences": [
+        ["P", "Growth also increases tax revenue."],
+        ["E", "The government can spend more on education and healthcare, which helps the people who use these services."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "However, income is unevenly distributed, so not everyone benefits equally."],
+        ["E", "People on low incomes, or who are sick and unable to work, may see little rise in their income."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "Growth can also cause structural unemployment."],
+        ["E", "Some industries decline and firms use more capital, so workers without the right skills may lose their jobs."],
+        ["A", "In the US, workers in industries that compete with imports from China may lose their jobs even while the economy grows."]
+      ]},
+      {"side": "conclusion", "sentences": [
+        ["C", "Economic growth benefits most people in the US, but not everyone; it depends on whether the extra tax revenue is used to help those on low incomes."]
+      ]}
+    ]
+  },
+  {
+    "year": 2023, "month": "June", "paper": 22, "question": 1, "part": "h", "type": "discuss6",
+    "model": [
+      {"side": "for", "sentences": [
+        ["P", "A larger population can increase the size of the labour force."],
+        ["E", "With more workers, output can rise, which increases economic growth."],
+        ["A", "Guyana's economy is growing quickly because of oil, so firms may need more workers."]
+      ]},
+      {"side": "for", "sentences": [
+        ["P", "If the rise is caused by immigration, new people may bring new skills and ideas."],
+        ["E", "This can raise productivity across the economy."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "However, if the rise comes from a higher birth rate, there will be more young dependants."],
+        ["E", "The dependency ratio rises, and the government must spend more on schools and healthcare."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "A larger population may also cause congestion and pollution."],
+        ["E", "This increases external costs and puts pressure on housing."]
+      ]},
+      {"side": "conclusion", "sentences": [
+        ["C", "Guyana is likely to benefit if its population moves closer to the optimum level, especially through the immigration of skilled workers, but not if it grows faster than housing and public services."]
+      ]}
+    ]
+  },
+  {
+    "year": 2024, "month": "June", "paper": 21, "question": 5, "part": "d", "type": "discuss8",
+    "model": [
+      {"side": "for", "sentences": [
+        ["P", "Expansionary fiscal policy means higher government spending and/or lower taxation."],
+        ["E", "This increases total (aggregate) demand in the economy."],
+        ["E", "Firms sell more, so they increase output and employ more workers."],
+        ["E", "This reduces cyclical unemployment."]
+      ]},
+      {"side": "for", "sentences": [
+        ["P", "Government spending on education and training can also reduce unemployment."],
+        ["E", "Workers gain new skills, so they become more occupationally mobile."],
+        ["E", "They can move into jobs in growing industries, which reduces structural unemployment."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "However, fiscal policy may fail if the increase in spending or the cut in taxes is too small."],
+        ["E", "Total demand may not rise enough to create jobs for everyone who is unemployed."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "Consumers and firms may also lack confidence, for example during a global recession."],
+        ["E", "They may save extra income instead of spending it."],
+        ["E", "Total demand then rises by less than expected, so fewer jobs are created."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "Some unemployment may remain because of labour immobility."],
+        ["E", "Differences in house prices between regions may stop workers moving to areas where jobs are available."]
+      ]},
+      {"side": "conclusion", "sentences": [
+        ["C", "Overall, fiscal policy can reduce unemployment, especially cyclical unemployment, but it is unlikely to achieve full employment on its own."],
+        ["C", "Its success depends on the size of the policy, on confidence, and on whether it is combined with policies that improve labour mobility."]
+      ]}
+    ]
+  },
+  {
+    "year": 2023, "month": "June", "paper": 23, "question": 5, "part": "d", "type": "discuss8",
+    "model": [
+      {"side": "for", "sentences": [
+        ["P", "A large population provides a large supply of labour."],
+        ["E", "This gives the economy a high productive capacity."],
+        ["E", "Firms can find workers more easily, which encourages investment and output."]
+      ]},
+      {"side": "for", "sentences": [
+        ["P", "A large population also means high total (aggregate) demand."],
+        ["E", "Firms can sell more and produce on a large scale."],
+        ["E", "This lets them benefit from economies of scale, lowering average costs and prices."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "However, a large population can put a strain on resources."],
+        ["E", "There may be too few houses, schools and hospitals."],
+        ["E", "This lowers living standards and increases government spending."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "If there are not enough jobs, a large population may lead to high unemployment."],
+        ["E", "Unemployed workers do not add to output, and the government must spend more on benefits."]
+      ]},
+      {"side": "conclusion", "sentences": [
+        ["C", "Overall, a large population can be beneficial, but it depends on its composition."],
+        ["C", "If most people are of working age and there are enough jobs, it helps the economy; if many are young dependants, it may not increase output in the short run."]
+      ]}
+    ]
+  },
+  {
+    "year": 2023, "month": "November", "paper": 21, "question": 3, "part": "d", "type": "discuss8",
+    "model": [
+      {"side": "for", "sentences": [
+        ["P", "A tax on a product increases firms' costs of production."],
+        ["E", "Supply decreases, so the price of the product rises."],
+        ["E", "Consumers buy less, so less is produced and consumed."],
+        ["E", "As a result, external costs such as pollution are reduced."]
+      ]},
+      {"side": "for", "sentences": [
+        ["P", "The tax also raises revenue for the government."],
+        ["E", "It can use this money to subsidise less-polluting products, which reduces external costs further."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "However, if demand is price inelastic, the tax may not work well."],
+        ["E", "This is often the case for addictive products such as cigarettes."],
+        ["E", "Quantity demanded falls only slightly, so external costs remain high."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "High taxes can also encourage tax evasion and illegal markets."],
+        ["E", "If the product is sold illegally without the tax, consumption and external costs may not fall."]
+      ]},
+      {"side": "conclusion", "sentences": [
+        ["C", "Overall, a tax can reduce external costs, especially when demand is price elastic."],
+        ["C", "It is less effective for products with inelastic demand, so the government may need to combine it with other policies, such as regulation."]
+      ]}
+    ]
+  },
+  {
+    "year": 2025, "month": "November", "paper": 22, "question": 2, "part": "d", "type": "discuss8",
+    "model": [
+      {"side": "for", "sentences": [
+        ["P", "Training can increase workers' productivity."],
+        ["E", "Workers learn new skills and can use more advanced technology."],
+        ["E", "They produce more output per hour, so the firm's average costs of production fall."],
+        ["E", "Lower costs can lead to higher profits."]
+      ]},
+      {"side": "for", "sentences": [
+        ["P", "Training may also motivate workers."],
+        ["E", "Workers feel valued, so they are less likely to leave."],
+        ["E", "Lower labour turnover reduces the cost of recruiting new workers."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "However, training has costs for the firm."],
+        ["E", "The firm must pay for courses, and output may fall while workers are away being trained."]
+      ]},
+      {"side": "against", "sentences": [
+        ["V", "Trained workers may also leave to work for other firms."],
+        ["E", "The other firm then gains the benefit of the training without paying for it."],
+        ["E", "This means the first firm loses the money it spent on training."]
+      ]},
+      {"side": "conclusion", "sentences": [
+        ["C", "Overall, firms are likely to benefit from training if it raises productivity by more than it costs."],
+        ["C", "The benefit is greatest when the firm can keep its trained workers, for example by offering good pay and promotion."]
+      ]}
+    ]
+  }
+]
